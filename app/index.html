@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="/bower_components/nvd3/build/nv.d3.css">
+    <link rel="stylesheet" href="/bower_components/angular-popeye/release/popeye.css">
+    <link rel="stylesheet" href="/bower_components/angucomplete-alt/angucomplete-alt.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="demoApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header" ng-controller="headerCtrl">
+
+            <a class="navbar-brand" href="#/"><img src="images/demo_logo_md.png"/></a>
+            <div class="header-search" style="position:relative;">
+
+              <div><angucomplete-alt id="pwd"
+              placeholder="Search for a co-worker"
+              pause="100"
+              selected-object="searchSelect"
+              local-data="allUsers"
+              search-fields="firstName"
+              title-field="firstName,lastName"
+              minlength="1"
+              input-class="form-control pull-left autocomplete"/>
+            </div>
+            <input type="submit" value="Search" class="pull-left" ng-click="goToUser(searchSelect)">
+              <a class="pull-left search-button" href="#/sendcard">Send A Card!</a>
+    </div>
+              <div style="clear:both;"></div>
+    <div class="header-user pull-right">
+      <img class="header-user-image pull-left" ng-src="{{user.imageUrl}}">
+      <a href="/#/gallery"><div class="badge">{{user.numNewCardsReceived}}</div></a>
+      <div class="pull-left">{{user.firstName}} {{user.lastName}}<br>
+      <span class="header-coins">Total Coins: {{user.totalCoinsReceived}}</span></div></div>
+    </div>
+    <div class="xnav">
+      <a href="/#/profile">My Profile & Stats</a> <a href="/#/gallery">My Gallery</a> <a href="/#/scoreboard">Leaderboard</a> <a href="/#/sendcard">Send A Card</a>
+    </div>
+
+    <div class="full-container">
+    <div class="view pull-left" ng-view=""></div>
+    <div class="feed pull-right hidden-xs hidden-sm" ng-controller="feedCtrl" style="height:700px; overflow-y:auto;">
+      {{pathy}}
+        <div class="feed-item" ng-repeat="event in feed">
+         <img ng-src="{{event.imageUrl}}" class="feed-icon">
+          <div class="main-text">
+            <p ng-bind-html="event.eventMessage"></p>
+            <p class="feed-message" ng-bind-html="event.cardMessage"></p>
+          </div> 
+          <div class="clearfix"></div>
+          <div style="padding-top:10px; font-size:13px;">{{event.createdAt}}
+            <a href=""><div class="pull-right"><img src="images/coins_sm.png" height="16" style="margin-top:-2px;"> ADD TIP!</div></a>
+
+          </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    </div>
+
+    <div class="footer">
+       
+      <div class="container">
+        <p><span class="glyphicon glyphicon-sunglasses"></span> Copyright 2016 demo</p>
+      </div>
+    </div>
+
+    <!-- card modal -->
+
+    <div class="modal fade card-modal" id="cardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="CardCtrl">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body core{{card.coreValueType.coreValueTypeId}}">
+            <div class="card-modal-card">
+              <div class="card-title">
+               {{card.coreValueType.coreValueName}}
+              </div>
+              <div class="card-image">
+                <img ng-src="{{card.coreValueType.coreValueTypeImageUrl}}">
+              </div>
+              <div class="card-type">
+                CORE VALUE #{{card.coreValueType.coreValueTypeId}}
+                <div class="pull-right">
+                  <img src="images/coins_sm.png" style="margin-top:-2px;"> {{card.numCoins}}
+                </div>
+              </div>
+              <div class="card-info">
+                <img src="{{card.sender.imageUrl}}" class="pull-left">
+                <div class="card-label">FROM:</div>
+                <h4>{{card.sender.senderName}}</h4></div>
+              <div class="card-info">
+               <img src="{{card.receiver.imageUrl}}" class="pull-left">
+                <div class="card-label">TO:</div>
+                <h4>{{card.receiver.receiverName}}</h4></div>
+              <div class="timestamp">Sent at {{card.createdAt}}</div>
+            </div>
+            <div class="card-modal-message">
+              <div class="card-modal-message-tip"></div>
+              <div class="card-modal-message-body">
+               {{card.message}}
+                <div class="card-modal-signature">- {{card.sender.senderName}}</div>
+              </div>
+            </div>
+          </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="bower_components/d3/d3.js"></script>
+        <script src="bower_components/nvd3/build/nv.d3.js"></script>
+        <script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+        <script src="bower_components/angular-popeye/release/popeye.js"></script>
+        <script src="bower_components/angular-audio/app/angular.audio.js"></script>
+        <script src="bower_components/angucomplete-alt/angucomplete-alt.js"></script>
+
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/card.js"></script>
+        <script src="scripts/controllers/sendcard.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/feed.js"></script>
+        <script src="scripts/controllers/user.js"></script>
+        <script src="scripts/controllers/scoreboard.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

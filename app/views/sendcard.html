@@ -1,0 +1,36 @@
+<div class="sendcard simple-page" fixHeight="true">
+	<div class="col-lg-8 col-lg-offset-2">
+		<h2 class="page-title">Send A Core Values Card!</h2>
+		<p>Show your fellow employees some love by sending a new, improved Core Values Card! Did someone help with a project? Cover a shift for you? Help groom your cat? (That was probably Bennett.) Well then, what are you waiting for?</p>
+		<form ng-submit="sendCard(card)">
+  <div class="form-group">
+    <label for="email">Recipient's Name</label>
+    <select class="form-control" ng-model="card.ReceiverUserId">
+<option value="1">Megan Duffy</option>
+<option value="2">Bennett Shapiro</option>
+<option value="3">Chad Lineberry</option>
+<option value="4">Tony Burian</option>
+<option value="5">Rob Clark</option>
+<option value="6">Maribeth Homa</option>
+</select>
+
+  </div>
+  <div class="form-group">
+    <label for="coreValue">Select A Core Value:</label>
+    <select class="form-control" id="coreValue" ng-model="card.CoreValueTypeId">
+    	<option ng-repeat="value in coreValues" value="{{$index+1}}">{{value.coreValueName}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="coins">How Many Coins to Add?</label>
+    <input type="text" class="form-control" id="coins" ng-model="card.NumCoins">
+  </div>
+<div class="form-group">
+    <label>Write Your Message Here</label><br>
+    <textarea name="comment" form="usrform" ng-model="card.Message" style="width:100%; height:150px;"></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+	</div>
+	<div class="clearfix"></div>
+</div>
