@@ -48,6 +48,7 @@ angular
     };
   })
   .factory('dataService', function ($http) {
+    var API = 'http://localhost/demo/api';
     return {
       getUser: function (id) {
         return $http.get('../user.json');
@@ -62,7 +63,7 @@ angular
         return $http.get('../corevalues.json');
       },
       getCardById: function (id) {
-        return $http.get('http://localhost/demo/api/cards/' + id);
+        return $http.get(API + '/cards/' + id);
       },
       getCards: function (id, type, limit, offset) {
         return $http.get('../received.json');
@@ -71,19 +72,19 @@ angular
         return $http.get('../events.json');
       },
       getCoreValueTypes: function () {
-        return $http.get('http://localhost/demo/api/corevaluetypes/');
+        return $http.get(API + '/corevaluetypes/');
       },
       getScoreboardTypes: function () {
         return $http.get('../boardtypes.json');
       },
       getScoreboardData: function (id, limit) {
-        return $http.get('http://localhost/demo/api/scoreboardtypes/' + id + '?subcategoryid=0&limit=' + limit + '&offset=0');
+        return $http.get(API + '/scoreboardtypes/' + id + '?subcategoryid=0&limit=' + limit + '&offset=0');
       },
       sendCard: function (obj) {
-        return $http.post('http://localhost/demo/api/cards/', JSON.stringify(obj));
+        return $http.post(API + '/cards/', JSON.stringify(obj));
       },
       readCard: function (id, obj) {
-        return $http.post('http://localhost/demo/api/cards/' + id + '/isread', JSON.stringify(obj));
+        return $http.post(API + '/cards/' + id + '/isread', JSON.stringify(obj));
       }
 
     };
