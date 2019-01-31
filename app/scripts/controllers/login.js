@@ -8,11 +8,6 @@
  * Controller of the demoApp
  */
 angular.module('demoApp')
-  .controller('LoginCtrl', ['$scope', function ($scope) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-    $scope.hideFeed=true;
-  }]);
+	.controller('LoginCtrl', ['$scope', function ($scope) {
+		$scope.hideFeed=true;
+	}]);
