@@ -1,0 +1,36 @@
+/*activity feed*/
+
+.feed{
+  width:336px;
+  font-size:14px;
+  line-height:18px;
+}
+
+.feed p {
+  margin:0;
+  padding:0;
+}
+
+.feed-item{
+  padding:13px 16px;
+  border-bottom:1px solid #dedede;
+}
+
+.feed-item .icon, .feed-item .main-text{
+  /*display:inline-block;*/
+}
+
+.feed-item .feed-message{
+   margin-top:12px; 
+   font-size:13px; 
+   font-style:italic;
+}
+
+
+.feed-icon{
+  width:60px;
+  height:60px;
+  border-radius:4px;
+  float:left;
+  margin:0 22px 8px 0;
+}

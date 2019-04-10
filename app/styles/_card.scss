@@ -1,0 +1,256 @@
+
+$modal-background: #958d8c;
+$modal-card-background: #104d61;
+$card-image-background: #12282f;
+
+$card-title-color: #1e86a7;
+
+$modal-card-image: url(../images/white-shade.png);
+$modal-card-tip: url(../images/speech_bubble_tail.png);
+
+/*card modal*/
+ @media (min-width: 768px){
+.card-modal .modal-dialog {
+    width: 750px;
+    margin: 130px auto;
+  }
+}
+
+.card-modal .modal-content{
+  background: $modal-background;
+}
+
+.card-modal-card{
+  width:290px;
+  height:430px;
+  background-color: $modal-card-background;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: $modal-card-image
+  background-position: 48.5% top;
+  border-radius: 10px;
+  display:inline-block;
+  vertical-align: top;
+  padding:14px;
+}
+
+.card-modal-card .timestamp{
+  color:#ffffff;
+  width:100%;
+  text-align: center;
+  margin-top:-1px;
+}
+
+.card-modal-message{
+  height:284px;
+  width:408px;
+  background-color:#ebebeb;
+  border-radius: 6px;
+  display:inline-block;
+  vertical-align: top;
+  margin-left:15px;
+  position:relative;
+  padding:12px;
+}
+
+.card-modal-message-body{
+  font-size:17px;
+  line-height:22px;
+}
+
+.card-modal-message-tip{
+  width:84px;
+  height:67px;
+  position:absolute;
+  left:-74px;
+  top:238px;  
+  background-image: $modal-card-tip;
+}
+
+.card-modal-signature{
+  margin:15px 0 0 235px;
+}
+
+/*inner card*/
+
+.card-title, .card-type{
+  height:31px;
+  margin-bottom:7px;
+  background-color: $card-title-color;
+  border-radius:4px;
+  color:#fff;
+  font-weight:bold;
+  font-size:20px;
+  padding:0 6px;
+}
+
+.card-type{
+  margin-bottom:11px;
+  font-weight:normal;
+  font-size:15px;
+  padding-top:4px;
+}
+
+.card-image{
+  height:182px;
+  margin-bottom:7px;
+  background: $card-image-background;
+  border-radius:4px;
+  position:relative;
+}
+
+.card-image img{
+  position:absolute;
+  left:-15px;
+  top:-58px;
+}
+
+.card-info{
+  height:55px;
+  border-radius:55px;
+  background-color:rgba(210,210,210,.3);
+  margin-bottom:7px;
+  font-size:14px;
+  font-weight:bold;
+  color:#ffffff;
+}
+
+.card-info img{
+  height:49px;
+  width:49px;
+  border-radius:55px;
+  margin:3px 6px 3px 3px;
+}
+
+.card-info h4{
+  font-weight:bold;
+  letter-spacing:-.01em;
+  margin:0;
+  padding:0;
+  font-size:15px;
+}
+
+.card-info .card-label{
+  margin-bottom:-1px;
+  padding-top:4px;
+  color:#444444;
+}
+
+.core1 .card-info{
+  color:#333333;
+}
+
+/*dynamic card styles - make this nicer*/
+
+.core1 .card-modal-card, .core1 .gallery-card{
+  background-color:#f4f4f4;
+  }
+.core1 .card-title, .core1 .card-type, .core1 .gallery-card-title{
+    background-color:#cecece;
+  }
+.core1 .card-image, .core1 .gallery-img-bg{
+  background-color:#555555;
+}
+.core2 .card-modal-card, .core2 .gallery-card{
+  background-color:#28788f;
+}
+.core2 .card-title, .core2 .card-type, .core2 .gallery-card-title{
+  background-color:#1e86a7
+}
+.core2 .card-image, .core2 .gallery-img-bg{
+  background-color:#12282f;
+}
+.core3 .card-modal-card, .core3 .gallery-card{
+  background-color:#252525;
+}
+.core3 .card-title, .core3 .card-type, .core3 .gallery-card-title{
+  background-color:#414141;
+}
+.core3 .card-image, .core3 .gallery-img-bg{
+  background-color: #313131;
+}
+.core4 .card-modal-card, .core4 .gallery-card{
+  background-color:#a2000f;
+}
+.core4 .card-title, .core4 .card-type, .core4 .gallery-card-title{
+  background-color:#951f28;
+}
+.core4 .card-image, .core4 .gallery-img-bg{
+  background-color:#40070b;
+}
+.core5 .card-modal-card, .core5 .gallery-card{
+  background-color:#77a30a;
+}
+.core5 .card-title, .core5 .card-type, .core5 .gallery-card-title{
+  background-color:#99c42d;
+}
+.core5 .card-image, .core5 .gallery-img-bg{
+  background-color:#3f4f18;
+}
+
+/*gallery*/
+
+.gallery{
+
+}
+.gallery-body{
+  margin-top:25px;
+}
+
+.gallery-cell{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.gallery-card{
+  width:120px;
+  height:179px;
+  border-radius:5px;
+  background-color:#fff;
+  margin:0 auto;
+  padding:5px;
+  position:relative;
+}
+
+.gallery-card img{
+  width:100px;
+  height:auto;
+  position:absolute;
+  left:10px;
+  top:10px;
+
+}
+
+.gallery-img-bg{
+  height:78px;
+}
+
+.gallery-card-title{
+  height:14px;
+  color:#ffffff;
+  font-size:8px;
+  font-weight:bold;
+  text-align:left;
+}
+
+.gallery .bottom-text{
+  line-height:12px;
+  font-weight:bold;
+  letter-spacing:-.01em;
+}
+
+.gallery .coins{
+  color:#ffffff;
+  font-weight:bold;
+  font-size:12px;
+  letter-spacing:-.01em;
+}
+
+.gallery-card-message{
+  background-color:rgba(220,220,220,.3);
+  height:46px;
+  padding:4px;
+  font-size:9px;
+  font-weight:normal;
+  font-style:italic;
+}

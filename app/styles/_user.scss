@@ -1,0 +1,139 @@
+$profile-left-background: #a19998;
+$profile-left-color: #f1f0f0;
+$profile-stats-color: #4d4d4d;
+$stats-border-color: #b3b3b3;
+$profile-score-color: #929292;
+
+$profile-left-image: url(../images/bricks_bg.png);
+$flag-background: url(../images/flags/pole.png);
+
+
+/*user profiles*/
+
+.profile-left{
+  background-color: $profile-left-background;
+  background-image: $profile-left-image;
+  text-align:center;
+  color: $profile-left-color;
+  font-size:18px;
+}
+
+.profile-left h1{
+  font-size:36px;
+  font-weight:bold;
+  color:#ffffff;
+  margin:0 0 5px 0;
+  padding:0;
+}
+
+.profile-left h4{
+  font-size:24px;
+  font-weight:normal;
+  margin:0;
+  padding:0;
+}
+
+.profile-left-pic{
+  width:225px;
+  height:225px;
+  border-radius:120px;
+  margin: 18px 0 35px 0;
+}
+
+.profile-job-title{
+  margin:34px 0 4px 0;
+  line-height:22px;
+}
+.profile-stats{
+  color: $profile-stats-color;
+  min-height:700px;
+  background: url(../images/profile_bg.jpg) no-repeat center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.profile-stats-top{
+  font-size:80px;
+  font-weight:bold;
+  border-bottom:1px solid $stats-border-color;
+  height:100px;
+  overflow:hidden;
+}
+
+.profile-stats-middle{
+  font-size:68px;
+  font-weight:bold;
+  border-bottom:1px solid $stats-border-color;
+  height:92px;
+  overflow:hidden;
+}
+
+.profile svg{
+  margin-top:-24px;
+}
+
+.profile-stats-middle svg{
+  margin-top:-32px;
+}
+
+
+.profile-chart-container{
+  margin-right:-70px;
+}
+
+.profile-score{
+  font-size:46px;
+  line-height:28px;
+  padding-top:10px;
+}
+
+.profile-stats-middle .profile-score{
+  padding-top:1px;
+}
+
+.profile-score .sm-text{
+  font-size:14px;
+  font-weight:normal;
+  color: $profile-score-color;
+}
+
+.profile .text-20{
+  font-size:20px;
+  display:inline-block;
+  line-height:20px;
+  font-weight:bold;
+}
+
+.profile-stats .row{
+  margin:0;
+}
+
+.profile hr{
+   display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #999;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+/*flags*/
+
+.flag{
+  height:172px;
+  width:113px;
+  background-image: $flag-background;
+  background-repeat:no-repeat;
+  overflow: hidden;
+}
+
+.flag-flag{
+  width:109px;
+  height:70px;
+  margin-left:4px;
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}

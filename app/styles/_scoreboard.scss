@@ -1,0 +1,88 @@
+/*scoreboard*/
+
+.scoreboard-top{
+  height:184px;
+  padding:15px;
+  position:relative;
+}
+
+.scoreboard-middle{
+  height:164px;
+  padding:14px;
+  width:98%;
+}
+
+.scoreboard-bottom div{
+  height:154px;
+  width:49%;
+  padding:14px;
+}
+
+.sign-end{
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.scoreboard-bottom {
+  background-image:url(../images/scoreboard-bottom_bg.png);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  width:98%;
+}
+.scoreboard-bottom div:nth-child(even){
+  margin-left:2%;
+}
+
+.scoreboard-top,.scoreboard-middle, .scoreboard-bottom div{
+  color:#fff;
+    background-color:#b18864;
+    background-image:url(../images/wood_bg.png);
+      -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    margin-bottom:24px;
+    border-radius:5px;
+}
+
+.scoreboard-top img:not(.sign-end),.scoreboard-middle img, .scoreboard-bottom div img{
+  border-radius:100px;
+  height:100%;
+  width:auto;
+  display:inline-block;
+  margin-right:25px;
+    -moz-box-shadow:    2px 2px 0 6px rgba(82, 65, 48, .4);
+  -webkit-box-shadow: 2px 2px 0 2px rgba(82, 65, 48, .4);
+  box-shadow:         2px 2px 0 2px rgba(82, 65, 48, .4);
+  }
+
+.scoreboard-bottom div img{
+  height:100px;
+}
+.scoreboard-sign{
+  background-image:url(../images/pole_bg.jpg);
+  background-repeat: repeat-y;
+  padding:20px 0 0 52px;
+
+}
+
+.scoreboard-sign h2{
+  margin:0 0 10px 0;
+  padding:0;
+  font-size:22px;
+}
+
+.scoreboard-sign h3{
+  margin:0 0 8px 0;
+  padding:0;
+  font-size:17px;
+}
+
+.scoreboard, .sendcard, .gallery{
+  background: url(../images/profile_bg.jpg) no-repeat center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
