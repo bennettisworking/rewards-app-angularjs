@@ -1,0 +1,34 @@
+
+          <div class="modal-body core{{card.coreValueType.coreValueTypeId}}">
+            <div class="card-modal-card">
+              <div class="card-title">
+               {{card.coreValueType.coreValueName}}
+              </div>
+              <div class="card-image">
+                <img ng-src="{{card.coreValueType.coreValueTypeImageUrl}}">
+              </div>
+              <div class="card-type">
+                CORE VALUE #{{card.coreValueType.coreValueTypeId}}
+                <div class="pull-right">
+                  <img src="images/coins_sm.png" style="margin-top:-2px;"> {{card.numCoins}}
+                </div>
+              </div>
+              <div class="card-info">
+                <img src="{{card.sender.imageUrl}}" class="pull-left">
+                <div class="card-label">FROM:</div>
+                <h4>{{card.sender.senderName}}</h4></div>
+              <div class="card-info">
+               <img src="{{card.receiver.imageUrl}}" class="pull-left">
+                <div class="card-label">TO:</div>
+                <h4>{{card.receiver.receiverName}}</h4></div>
+              <div class="timestamp">Sent at {{card.createdAt}}</div>
+            </div>
+            <div class="card-modal-message">
+              <div class="card-modal-message-tip"></div>
+              <div class="card-modal-message-body">
+               {{card.message}}
+                <div class="card-modal-signature">- {{card.sender.senderName}}</div>
+              </div>
+            </div>
+          </div>
+ 

@@ -1,29 +1,32 @@
 {
-  "name": "demo",
-  "version": "0.0.0",
+  "name": "rewards-app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Bennett <bennettisworking@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bennettisworking/sample-angular-build",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular": "^1.4.0",
-    "bootstrap": "^3.2.0",
-    "angular-animate": "^1.4.0",
-    "angular-cookies": "^1.4.0",
-    "angular-resource": "^1.4.0",
-    "angular-route": "^1.4.0",
-    "angular-sanitize": "^1.4.0",
-    "angular-touch": "^1.4.0"
-  },
-  "devDependencies": {
-    "angular-mocks": "^1.4.0",
-    "slackapi-angularjs": "^0.1.0"
-  },
-  "appPath": "app",
-  "moduleName": "demoApp",
-  "overrides": {
-    "bootstrap": {
-      "main": [
-        "less/bootstrap.less",
-        "dist/css/bootstrap.css",
-        "dist/js/bootstrap.js"
-      ]
-    }
+    "angucomplete-alt": "^3.0.0",
+    "angular-cookies": "^1.7.8",
+    "angular-animate": "^1.7.8",
+    "angular-resource": "^1.7.8",
+    "angular-audio": "^1.7.4",
+    "angular-popeye": "^1.0.5",
+    "angular-nvd3": "^1.0.9",
+    "angular-route": "^1.7.8",
+    "angular-touch": "^1.7.8",
+    "angular-sanitize": "^1.7.8",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1"
   }
 }

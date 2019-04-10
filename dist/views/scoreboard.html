@@ -1,0 +1,49 @@
+<div class="scoreboard">
+<div class="col-lg-8 col-lg-offset-2 scoreboard-sign">
+	<div class="row scoreboard-top">
+		<img src="{{boardTypes[0].scoreboardData.scoreboardEntries[0].entityImageUrl}}" class="pull-left">
+		<div style="display:inline-block;">
+			<h2>{{boardTypes[0].scoreboardTypeName}}</h2>
+			<div ng-repeat="entry in boardTypes[0].scoreboardData.scoreboardEntries | limitTo:5">
+				{{$index+1}}. {{entry.entityName}} ({{entry.value}})
+			</div>
+		</div>
+		<div style="display:inline-block; margin-left:30px;">
+				<div ng-repeat="entry in boardTypes[0].scoreboardData.scoreboardEntries | limitTo:5:5">
+				{{$index+6}}. {{entry.entityName}} ({{entry.value}})
+			</div>
+		</div>
+		<img src="images/sign-end.png" class="sign-end">
+	</div>
+	<div class="row scoreboard-middle">
+		<img src="{{boardTypes[1].scoreboardData.scoreboardEntries[0].entityImageUrl}}" class="pull-left">
+		<div style="display:inline-block;">
+			<h2>{{boardTypes[1].scoreboardTypeName}}</h2>
+			<div ng-repeat="entry in boardTypes[1].scoreboardData.scoreboardEntries | limitTo:5">
+				{{$index+1}}. {{entry.entityName}} ({{entry.value}})
+			</div>
+		</div>
+		<div style="display:inline-block; margin-left:30px;">
+			<div ng-repeat="entry in boardTypes[1].scoreboardData.scoreboardEntries | limitTo:5:5">
+				{{$index+6}}. {{entry.entityName}} ({{entry.value}})
+			</div>
+		</div>
+	</div>
+	<div ng-repeat="board in bottomBoardTypes" ng-if="$index % 2 == 0" class="row scoreboard-bottom">
+    <div class="col-lg-6"><h3>{{board.scoreboardTypeName}}</h3><img src="{{board.scoreboardData.scoreboardEntries[0].entityImageUrl}}" class="pull-left">
+ <span ng-repeat="entry in board.scoreboardData.scoreboardEntries">
+				{{$index+1}}. {{entry.entityName}} ({{entry.value}})<br>
+			</span>
+
+    </div>
+    <div class="col-lg-6" ng-if="boardTypes.length > ($index + 1)"><h3>{{board.scoreboardTypeName}}</h3><img src="{{board.scoreboardData.scoreboardEntries[0].entityImageUrl}}" class="pull-left">
+     <span ng-repeat="entry in board.scoreboardData.scoreboardEntries">
+				{{$index+1}}. {{entry.entityName}} ({{entry.value}})<br>
+			</span>
+		</div>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+
+

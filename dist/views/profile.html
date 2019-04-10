@@ -1,0 +1,105 @@
+<div class="profile">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-12 standard-pad profile-left content" style="height:970px; padding-bottom:0;">
+      <img ng-src="{{user.imageUrl}}" class="profile-left-pic"/>
+      <h1>{{user.firstName}} {{user.lastName}}</h1>
+      <h4>{{user.level.levelName}}</h4>
+      <div class="profile-job-title">
+        <p>{{user.jobTitle}}<br>
+          {{user.department.departmentName}}</p>
+      </div>
+      <img class="iconsize" ng-src="{{deptIcon}}"/>
+      <img class="iconsize" ng-src="{{levelIcon}}"/>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-12 profile-stats">
+      <div class="section-title">
+        Cards & Coins Collected
+      </div>
+      <div class="profile-stats-top row">
+        <div class="col-lg-4 col-lg-offset-1">
+          {{userSummary.totalCoinsReceived}}
+          <div class="text-20">
+            TOTAL<br>
+            CORE VALUE<br>
+            COINS
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="pull-right profile-score">
+            <span class="sm-text">Your rank:</span><br>
+            {{userSummary.coinPercentile}}%
+          </div>
+          <div class="pull-right profile-chart-container">
+            <nvd3 options="options" data="data" class="profile-chart"></nvd3>
+          </div>
+        </div>
+      </div>
+      <div class="profile-stats-middle row">
+        <div class="col-lg-5 col-lg-offset-1">
+          {{userSummary.totalCardsReceived}}
+          <div class="text-20">
+            TOTAL<br>
+            CARDS
+          </div>
+        </div>
+        <div class="col-lg-5 ">
+          <div class="pull-right profile-score">
+            <span class="sm-text">Your rank:</span><br>
+            {{userSummary.cardPercentile}}%
+          </div>
+          <div class="pull-right profile-chart-container">
+            <nvd3 options="options" data="data2" class="profile-chart"></nvd3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1" style="padding-top:10px;">
+          <span class="text-20">BREAKDOWN BY CORE VALUES</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1"></div>
+        <div ng-repeat="score in coreScores" class="col-lg-2">
+          <div class="flag">
+            <div class="flag-flag"
+                 ng-style="{'background-image': 'url(images/flags/flag_{{score.coreValueId}}.png)', 'margin-top': '{{score.flagHeight}}px'}">
+              <!--<img ng-src="../flags/{{score.coreValueImage}}" height="70" style="margin-left:13px;">-->
+            </div>
+          </div>
+          <div style="height:60px"><h4><b>{{score.coreValueName}}</b></h4></div>
+          {{score.coins}} coins<br>{{score.cards}} cards
+        </div>
+      </div>
+      <div class="row" style="padding-left:70px;">
+        <hr>
+        <span class="text-20">LAST 5 CARDS RECEIVED</span><br>
+        <div style="height:25px"></div>
+        <div class="col-lg-2" ng-repeat="card in cards">
+          <div class="gallery-cell core{{card.coreValueType.coreValueTypeId}}">
+            <div class="gallery-card" ng-click="popCard(card.cardId)">
+              <img src="images/new-burst.png" style="position:absolute; top:0; left:0; height:50px; width:50px;"
+                   ng-hide="card.isRead">
+              <div class="gallery-card-title">{{card.coreValueType.coreValueName}}</div>
+              <div class="gallery-img-bg"></div>
+              <img ng-src="{{card.coreValueType.coreValueTypeImageUrl}}">
+              <div class="gallery-card-title"><span style="font-weight:normal;">CORE VALUE #{{card.coreValueType.coreValueTypeId}}</span>
+              </div>
+              <div class="gallery-card-message">{{ card.message | limitTo: 20 }}{{card.message.length > 20 ? '...' :
+                ''}}
+              </div>
+              <div class="coins">{{card.numCoins}} COINS</div>
+            </div>
+            <div class="bottom-text">
+              <span class="small-text">From:</span><br>
+              {{card.sender.senderName}}<br>
+              <span class="small-text">To:</span><br>
+              {{card.receiver.receiverName}}<br>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <a class="pull-left search-button" href="#/gallery" style="margin-left:70px; margin-bottom:20px;">View Gallery</a>
+    </div>
+  </div>
+</div>
