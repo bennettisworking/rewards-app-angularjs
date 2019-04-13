@@ -120,7 +120,7 @@ angular
           data: {
             'username': 'demo',
             'icon_emoji': ':demo:',
-            'text': t
+            'text': text
           }
         });
 
